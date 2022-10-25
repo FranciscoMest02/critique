@@ -15,5 +15,10 @@ npm run serve
 npm run build
 ```
 
+### Instalacion de Bootstrapvue
+```
+npm install vue bootstrap bootstrap-vue
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
