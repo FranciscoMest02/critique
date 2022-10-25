@@ -5,9 +5,21 @@
             <b-row>
                 <b-col cols="5">
                     <div class="form">
-                        <p class="title">Bienvenido de nuevo, critiquer</p>
-                        <p class="subtitle">Inicia sesión para continuar compartiendo 
-                            las criticas de lo que más te gusta y ver lo que los demás opinan.</p>
+                        <p class="title">Únete a millones de críticos</p>
+                        <p class="subtitle">Forma parte de la comunidad de Critique, y 
+                            comparte tu opinion sobre los ultimos estrenos y mas.</p>
+                        <div class="nombre">
+                            <b-form @submit.stop.prevent>
+                                <label for="text-nombre">Nombre</label>
+                                <b-form-input type="text" id="text-nombre"></b-form-input>
+                            </b-form>
+                        </div>
+                        <div class="email">
+                            <b-form @submit.stop.prevent>
+                                <label for="text-email">Email</label>
+                                <b-form-input type="email" id="text-email"></b-form-input>
+                            </b-form>
+                        </div>
                         <div class="user">
                             <b-form @submit.stop.prevent>
                                 <label for="text-user">Usuario</label>
@@ -20,12 +32,14 @@
                                 <b-form-input type="password" id="text-password" aria-describedby="password-help-block"></b-form-input>
                             </b-form>
                         </div>
-                        <b-button class="logIn" variant="primary">Iniciar sesión</b-button>
+                        <b-button class="logIn" variant="primary">Regístrate</b-button><br><br>
+                        <b-button class="logIn" variant="outline-dark">Regístrate con Google</b-button>
+                        <b-button class="logIn" variant="outline-dark">Regístrate con Apple</b-button>
                     </div>
                 </b-col>
                 <b-col cols="7">
-                    <p class="movieTitle">The Batman, 2022</p>
-                    <img alt="Batman poster" src="../assets/imageLogin.jpg">
+                    <p class="movieTitle">The Greatest Showman, 2017</p>
+                    <img alt="Batman poster" src="../assets/imagenRegistro.jpg">
                 </b-col>
             </b-row>
         </b-container>
@@ -50,7 +64,12 @@ export default {
 <style scoped>
 .logIn{
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
+}
+
+.register {
+    margin-right: 15px;
+    width: 46%;
 }
 
 .title {
@@ -62,12 +81,12 @@ export default {
     font-size: medium;
 }
 
-.password , .user {
+.password , .user, .nombre, .email {
     margin-bottom: 20px;
 }
 
 .form{
-    margin-top: 30%;
+    margin-top: 5%;
     margin-left: 15%;
     width: 70%;
 }
