@@ -2,12 +2,16 @@
 <template>
    
    <div class="hola">
+
+
+
    <div class="classHeader">
     <img class="lapiz" src="../assets/logoCritique.png"/>
     <p class="pHeader"> CRITIQUE </p>   
      <b-button class="registro" variant="primary">Register</b-button>
      <b-button variant="secondary">Login</b-button>
     </div>
+
     </div>
 </template>
 
@@ -20,12 +24,7 @@
 export default {
   name: 'Header',
   props: {
-  }, 
-      data() {
-      return {
-        value: null
-      }
-    }
+  }
 }
 </script>
 
