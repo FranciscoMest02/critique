@@ -1,17 +1,12 @@
 
 <template>
-   
-   <div class="hola">
-
 
 
    <div class="classHeader">
     <img class="lapiz" src="../assets/logoCritique.png"/>
     <p class="pHeader"> CRITIQUE </p>   
-     <b-button class="registro" variant="primary">Register</b-button>
-     <b-button variant="secondary">Login</b-button>
-    </div>
-
+    <b-button class="registro" variant="primary" href=#/registro>Regístrate</b-button>
+    <b-button variant="secondary" href="#/login">Inicia sesión</b-button>
     </div>
 </template>
 
@@ -24,7 +19,7 @@
 export default {
   name: 'Header',
   props: {
-  }
+  }, 
 }
 </script>
 
@@ -47,8 +42,8 @@ export default {
 
 .classHeader {
 
-    padding-top: 2%;
-    padding-bottom: 0.8%;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
     border-bottom-style: solid;
     border-bottom-color: gray;
 

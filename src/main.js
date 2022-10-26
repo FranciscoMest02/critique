@@ -3,8 +3,8 @@ import App from './App.vue'
 import VueRouter from "vue-router"
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import Home from "./components/Home.vue"
-import About from "./components/About.vue"
 import Login from "./components/Login.vue"
+import Registro from "./components/Registro.vue"
 
 // Import Bootstrap and BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -25,14 +25,14 @@ const router = new VueRouter({
       component: Home
     },
     {
-      path: '/about',
-      component: About
-    },
-    {
     path:'/login',
     component: Login
+    },
+    {
+      path: '/registro',
+      component: Registro
     }
-  ]
+  ],
 
 });
 
