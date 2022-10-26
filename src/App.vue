@@ -1,5 +1,5 @@
 <template>
-  <div id="app">  
+  <div id="app"> 
     <router-view> </router-view>
   </div>
 </template>
@@ -8,12 +8,12 @@
 import Login from './components/Login.vue'
 import Header from './components/Header.vue'
 import Registro from './components/Registro.vue'
+import NavBar from './components/NavBar.vue'
 
 
 export default {
   name: 'App',
   components: {
-
   }
 }
 </script>
