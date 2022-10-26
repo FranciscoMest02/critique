@@ -1,6 +1,6 @@
 <template>
-  <div id="app">  
-    <NavBar/>
+  <div id="app"> 
+    <router-view> </router-view>
   </div>
 </template>
 
@@ -14,7 +14,6 @@ import NavBar from './components/NavBar.vue'
 export default {
   name: 'App',
   components: {
-    Login, Header, Registro, NavBar
   }
 }
 </script>

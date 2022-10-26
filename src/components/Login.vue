@@ -20,7 +20,9 @@
                                 <b-form-input type="password" id="text-password" aria-describedby="password-help-block"></b-form-input>
                             </b-form>
                         </div>
+
                         <b-button class="logIn" variant="primary">Iniciar sesión</b-button>
+
                     </div>
                 </b-col>
                 <b-col cols="7">
@@ -31,6 +33,7 @@
         </b-container>
     </div>
 </template>
+
 
 <script>
 import Header from './Header.vue'

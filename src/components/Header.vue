@@ -1,13 +1,12 @@
 
 <template>
-   
-   <div class="hola">
+
+
    <div class="classHeader">
     <img class="lapiz" src="../assets/logoCritique.png"/>
     <p class="pHeader"> CRITIQUE </p>   
-     <b-button class="registro" variant="primary">Regístrate</b-button>
-     <b-button variant="secondary">Inicia sesión</b-button>
-    </div>
+    <b-button class="registro" variant="primary" href=#/registro>Regístrate</b-button>
+    <b-button variant="secondary" href="#/login">Inicia sesión</b-button>
     </div>
 </template>
 
