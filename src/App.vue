@@ -9,6 +9,7 @@ import Login from './components/Login.vue'
 import Header from './components/Header.vue'
 import Registro from './components/Registro.vue'
 import NavBar from './components/NavBar.vue'
+import Post from './components/Post.vue'
 
 
 export default {
