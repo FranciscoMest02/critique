@@ -5,9 +5,6 @@
 </template>
 
 <script>
-import Login from './components/Login.vue'
-import Header from './components/Header.vue'
-import Registro from './components/Registro.vue'
 
 
 export default {
