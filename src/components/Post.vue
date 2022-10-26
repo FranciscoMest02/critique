@@ -3,14 +3,14 @@
         <div class="post">
             <b-container>
                 <b-row>
-                    <b-col cols="1">
+                    <b-col cols="2">
                         <img class="profilePicture" alt="Profile picture" src="../assets/imageLogin.jpg"/>
                     </b-col>
-                    <b-col cols="6">
+                    <b-col cols="5">
                         <p class="username">{{username}}</p>
                         <p class="date">{{date}}</p>
                     </b-col>
-                    <b-col cols="3"><b-button disabled variant="outline-dark" size="lg">{{category}}</b-button></b-col>
+                    <b-col cols="3"><b-button disabled variant="outline-dark">{{category}}</b-button></b-col>
                     <b-col cols="2"><p class="postInfo">{{rating}} estrellas</p></b-col>
                 </b-row>
             </b-container>
@@ -42,22 +42,23 @@ export default {
     padding: 40px;
     border-radius: 10px;
     margin: auto;
+    margin-top: 40px;
 }
 
 .title {
     font-weight: bold;
-    font-size: x-large;
+    font-size: large;
     margin-top: 20px;
 }
 
 .review{
-    font-size: medium;
+    font-size: small;
     margin-top: 20px;
 }
 
 .profilePicture {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 999px;
 }
 

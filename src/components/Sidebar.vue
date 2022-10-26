@@ -22,7 +22,15 @@
         <div class="link-container">
             <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category4 }} </a>
         </div>
+
+        <div class="link-container">
+            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category5 }} </a>
+        </div>
         
+        <div class="link-container">
+            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category6 }} </a>
+        </div>
+
     </div>
 </template>
 
@@ -34,14 +42,16 @@ export default {
             Category1: 'Reseñas',
             Category2: 'Peliculas',
             Category3: 'Canciones',
-            Category4: 'Libros'
+            Category4: 'Libros',
+            Category5: 'Series',
+            Category6: 'Mis reseñas'
         }
     }
 }
 
 </script>
 
-<style scooped>
+<style scoped>
 #sidebar {
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -52,8 +62,7 @@ export default {
     max-width: 525px;
     padding: 16px 0px 16px 0px;
     height: 100%;
-    position:fixed!important;
-
+    border-right: 2px solid #b3b3b3;
 }
 
 h4 {
@@ -94,6 +103,7 @@ div a:hover{
   background-color: white;
 }
 
+
 .link-container{
     background: linear-gradient(90deg, #afd4ff, white) no-repeat right bottom / 0 var(--bg-h);
     transition: background-size 500ms;
@@ -109,7 +119,7 @@ div a:hover{
     display: block;
     margin: 16px 50px 16px 50px;
     text-align: left;
-
+    width: 80%;
 }
 
 
