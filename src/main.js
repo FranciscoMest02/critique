@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from "vue-router"
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
 import Home from "./components/Home.vue"
 import Login from "./components/Login.vue"
 import Registro from "./components/Registro.vue"
