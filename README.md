@@ -5,6 +5,16 @@
 npm install
 ```
 
+### Instalacion de Bootstrapvue
+```
+npm install vue bootstrap bootstrap-vue
+```
+
+### Instalacion de ruteo
+```
+npm install vue-router
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
@@ -13,11 +23,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Instalacion de Bootstrapvue
-```
-npm install vue bootstrap bootstrap-vue
 ```
 
 ### Customize configuration
