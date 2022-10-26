@@ -1,6 +1,6 @@
 <template>
   <div id="app">  
-    <Login />
+    <NavBar/>
   </div>
 </template>
 
@@ -8,12 +8,13 @@
 import Login from './components/Login.vue'
 import Header from './components/Header.vue'
 import Registro from './components/Registro.vue'
+import NavBar from './components/NavBar.vue'
 
 
 export default {
   name: 'App',
   components: {
-    Login, Header, Registro
+    Login, Header, Registro, NavBar
   }
 }
 </script>
