@@ -15,6 +15,11 @@ npm install vue bootstrap bootstrap-vue
 npm install vue-router
 ```
 
+### Instalacion de axios, para requests a la API
+```
+npm install axios
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
