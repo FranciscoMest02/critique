@@ -3,10 +3,10 @@
         <div class="post">
             <b-container>
                 <b-row>
-                    <b-col cols="2">
+                    <b-col cols="1">
                         <img class="profilePicture" alt="Profile picture" src="../assets/imageLogin.jpg"/>
                     </b-col>
-                    <b-col cols="5">
+                    <b-col cols="6">
                         <p class="username">{{username}}</p>
                         <p class="date">{{date}}</p>
                     </b-col>
@@ -29,7 +29,7 @@ export default {
     category: String,
     title: String,
     review: String,
-    rating: String
+    rating: Number
   }, 
 }
 </script>
