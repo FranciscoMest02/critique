@@ -7,7 +7,6 @@ import Home from "./components/Home.vue"
 import Login from "./components/Login.vue"
 import Registro from "./components/Registro.vue"
 import NuevoPost from "./components/NuevoPost.vue"
-import Prueba from "./components/Prueba.vue"
 
 // Import Bootstrap and BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -38,10 +37,7 @@ const router = new VueRouter({
     {
       path: '/crearpost',
       component: NuevoPost
-    }, {
-      path: '/prueba',
-      component: Prueba
-    }
+    },
   ],
 
 });
