@@ -37,7 +37,7 @@ const router = new VueRouter({
     {
       path: '/crearpost',
       component: NuevoPost
-    }
+    },
   ],
 
 });
