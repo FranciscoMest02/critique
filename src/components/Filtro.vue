@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header />
+        <NavBar />
         <b-container fluid>
             <b-row>
                 <b-col cols="3">
@@ -30,12 +30,12 @@ import axios from "axios"
 
 import Post from './Post.vue'
 import Sidebar from './Sidebar.vue'
-import Header from './Header.vue'
+import NavBar from './NavBar.vue'
 
 export default {
     name: 'Home',
     components: {
-        Post, Sidebar, Header
+        Post, Sidebar, NavBar
     },
     data: () => ({
         posts: null
