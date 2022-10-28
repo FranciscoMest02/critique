@@ -10,21 +10,21 @@
         <h4>Menu</h4>
         <!-- faltan los icons lol -->
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category1 }} </a>
+            <i class="fa fa-search"></i> <a href="#/" class="web-bar-item"> {{ Category1 }} </a>
         </div>
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category2 }} </a>
+            <i class="fa fa-search"></i> <a href="#/filtro/Película" class="web-bar-item" v-on:click="reload" > {{ Category2 }} </a>
         </div>
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category3 }} </a>
-        </div>
-
-        <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category4 }} </a>
+            <i class="fa fa-search"></i> <a href="#/filtro/Música" class="web-bar-item" v-on:click="reload"> {{ Category3 }} </a>
         </div>
 
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category5 }} </a>
+            <i class="fa fa-search"></i> <a href="#/filtro/Libro" class="web-bar-item"> {{ Category4 }} </a>
+        </div>
+
+        <div class="link-container">
+            <i class="fa fa-search"></i> <a href="#/filtro/Serie" class="web-bar-item"> {{ Category5 }} </a>
         </div>
         
         <div class="link-container">
@@ -45,6 +45,12 @@ export default {
             Category4: 'Libros',
             Category5: 'Series',
             Category6: 'Mis reseñas'
+        }
+    },
+    methods:{
+        reload(){
+            this.$forceUpdate();
+;
         }
     }
 }
