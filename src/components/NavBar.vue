@@ -4,9 +4,8 @@
    <div class="classHeader">
     <img class="logo" src="../assets/logoCritique.png"/>
     <p class="pHeader"> CRITIQUE </p>   
-     <b-button class="preguntas" variant="primary">+ Ask a question</b-button>
-     <b-button variant="secondary">notificacion</b-button>
-     <b-button class="profile" variant="secondary">profile</b-button>
+     <b-button class="preguntas" variant="primary">Nueva reseña</b-button>
+     <b-button class="profile" variant="danger">Cerrar sesion</b-button>
     </div>
     </div>
 </template>
@@ -27,7 +26,7 @@ export default {
     font-weight: bolder;
     font-size: 18px;
     margin-left: 1%;
-    margin-right: 70%;
+    margin-right: 65%;
     
 }
 

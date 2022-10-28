@@ -13,9 +13,8 @@
         <p class="tituloCategoria">Categoría: </p>
 
         <b-form-select class = "categoriaForm" v-model="selected" :options="options"></b-form-select>
-         <br>
-         <br>
-             <div class="mt-3">Selected: <strong>{{ selected }}</strong></div> 
+        <br>
+        <br>
         
         <label for="text-user">Título: </label>
         <b-form-input v-model="title" type="text" id="text-user"></b-form-input>
