@@ -37,7 +37,6 @@
 
 <script>
 import axios from "axios"
-
 import Header from './Header.vue'
 
 export default {
@@ -59,10 +58,12 @@ export default {
         const url = "http://127.0.0.1:5000/userLogIn/" + this.username + "/" + this.password;
         axios.get(url).then((result) => {
             //Obtenemos la informacion de la api
+            console.log(result.data.aviso == "LogIn valido")
             this.loginResult = result.data.result
             this.userId = result.data.userId
 
             //Si fue un login aceptado, guardamos la informacion del usuario
+
             if(this.loginResult){
                 localStorage.username = this.username
                 localStorage.userId = this.userId
