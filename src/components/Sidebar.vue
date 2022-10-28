@@ -1,9 +1,9 @@
 <template>
     <div id="sidebar" class="sticky">
         <div class="search-container">
-            <form action="/action_page.php">
-                <input type="text" placeholder="Busca" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+            <form @submit.prevent>
+                <input v-model="buscador" type="text" placeholder="Buscar" name="search">
+                <button v-on:click="handleFilter"><i class="fa fa-search"></i></button>
             </form>
         </div>
 
@@ -13,10 +13,10 @@
             <i class="fa fa-search"></i> <a href="#/" class="web-bar-item"> {{ Category1 }} </a>
         </div>
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#/filtro/Película" class="web-bar-item" v-on:click="reload" > {{ Category2 }} </a>
+            <i class="fa fa-search"></i> <a href="#/filtro/Película" class="web-bar-item"> {{ Category2 }} </a>
         </div>
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#/filtro/Música" class="web-bar-item" v-on:click="reload"> {{ Category3 }} </a>
+            <i class="fa fa-search"></i> <a href="#/filtro/Música" class="web-bar-item"> {{ Category3 }} </a>
         </div>
 
         <div class="link-container">
@@ -28,7 +28,7 @@
         </div>
         
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category6 }} </a>
+            <i class="fa fa-search"></i> <a :href="urlMisResenias" class="web-bar-item"> {{ Category6 }} </a>
         </div>
 
     </div>
@@ -44,13 +44,17 @@ export default {
             Category3: 'Canciones',
             Category4: 'Libros',
             Category5: 'Series',
-            Category6: 'Mis reseñas'
+            Category6: 'Mis reseñas',
+            urlMisResenias: "#/filtro/" + localStorage.username,
+            buscador: null
         }
     },
-    methods:{
-        reload(){
-            this.$forceUpdate();
-;
+    methods: {
+        handleFilter() {
+            const url = "#/filtro/titulo/" + this.buscador;
+            if(this.buscador != null){
+                window.location.href = url
+            }
         }
     }
 }

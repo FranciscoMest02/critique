@@ -41,12 +41,7 @@ export default {
         posts: null
     }),
     created(){
-        var url
-        if(this.$route.params.categoria == localStorage.username){
-            url = "http://127.0.0.1:5000/post/user/" + this.$route.params.categoria
-        } else {
-            url = "http://127.0.0.1:5000/post/" + this.$route.params.categoria
-        }
+        const url = "http://127.0.0.1:5000/post/titulo/" + this.$route.params.titulo
         axios.get(url).then((result) => {
             this.posts = result.data
         })
