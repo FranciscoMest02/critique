@@ -31,23 +31,24 @@ import axios from "axios"
 
 import Post from './Post.vue'
 import Sidebar from './Sidebar.vue'
-import Header from './Header.vue'
 import NavBar from './NavBar.vue'
 
 export default {
     name: 'Home',
     components: {
-        Post, Sidebar, Header, NavBar
+        Post, Sidebar, NavBar
     },
     data: () => ({
         posts: null
     }),
     created(){
-        axios.get("http://127.0.0.1:5000/post/all").then((result) => {
+        const url = "http://127.0.0.1:5000/post/titulo/" + this.$route.params.titulo
+        axios.get(url).then((result) => {
             this.posts = result.data
         })
     }
 }
+
 
 </script>
 

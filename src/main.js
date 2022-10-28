@@ -2,10 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from "vue-router"
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
 import Home from "./components/Home.vue"
 import Login from "./components/Login.vue"
 import Registro from "./components/Registro.vue"
 import NuevoPost from "./components/NuevoPost.vue"
+import Filtro from "./components/Filtro.vue"
+import FiltroNombre from "./components/FiltroNombre.vue"
+import EditarPost from "./components/EditarPost.vue"
 
 // Import Bootstrap and BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -36,6 +40,18 @@ const router = new VueRouter({
     {
       path: '/crearpost',
       component: NuevoPost
+    },
+    {
+      path:'/filtro/:categoria',
+      component: Filtro
+    },
+    {
+      path:'/filtro/titulo/:titulo',
+      component: FiltroNombre
+    },
+    {
+      path: '/editarpost/:id',
+      component: EditarPost
     }
   ],
 

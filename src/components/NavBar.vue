@@ -3,10 +3,9 @@
    <div class="hi">
    <div class="classHeader">
     <img class="logo" src="../assets/logoCritique.png"/>
-    <p class="pHeader"> CRITIQUE </p>   
-     <b-button class="preguntas" variant="primary">+ Ask a question</b-button>
-     <b-button variant="secondary">notificacion</b-button>
-     <b-button class="profile" variant="secondary">profile</b-button>
+    <p class="pHeader" > CRITIQUE </p>   
+     <b-button class="preguntas" variant="primary" href="#/crearpost">Nueva reseña</b-button>
+     <b-button class="profile" variant="danger" href="#/login" v-on:click="handleLogOut">Cerrar sesion</b-button>
     </div>
     </div>
 </template>
@@ -14,9 +13,13 @@
 <script>
 
 export default {
-  name: 'Header',
-  props: {
-  }, 
+  name: 'NavBar',
+  methods: {
+    handleLogOut() {
+        localStorage.removeItem('username')
+        localStorage.removeItem('userId')
+    }
+  }
 }
 </script>
 
@@ -27,7 +30,7 @@ export default {
     font-weight: bolder;
     font-size: 18px;
     margin-left: 1%;
-    margin-right: 70%;
+    margin-right: 65%;
     
 }
 

@@ -15,7 +15,8 @@
                                 :title=post.title 
                                 :review=post.review 
                                 :category=post.category 
-                                :rating=post.rating
+                                :rating=post.rating 
+                                v-bind:myReview="selfReview"
                                 :id=post._id
                             />
                         </div>
@@ -31,23 +32,31 @@ import axios from "axios"
 
 import Post from './Post.vue'
 import Sidebar from './Sidebar.vue'
-import Header from './Header.vue'
 import NavBar from './NavBar.vue'
 
 export default {
     name: 'Home',
     components: {
-        Post, Sidebar, Header, NavBar
+        Post, Sidebar, NavBar
     },
     data: () => ({
-        posts: null
+        posts: null,
+        selfReview: false
     }),
     created(){
-        axios.get("http://127.0.0.1:5000/post/all").then((result) => {
+        var url
+        if(this.$route.params.categoria == localStorage.username){
+            url = "http://127.0.0.1:5000/post/user/" + this.$route.params.categoria
+            this.selfReview = true
+        } else {
+            url = "http://127.0.0.1:5000/post/" + this.$route.params.categoria
+        }
+        axios.get(url).then((result) => {
             this.posts = result.data
         })
     }
 }
+
 
 </script>
 

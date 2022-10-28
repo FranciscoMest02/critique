@@ -8,7 +8,7 @@
     <div class="cuadroPost">
 
 
-        <p class="tituloCrear"> Crear nueva publicación </p>
+        <p class="tituloCrear"> Editar publicación </p>
 
         <p class="tituloCategoria">Categoría: </p>
 
@@ -28,17 +28,15 @@
         <p class="ratingUsuario">{{ value10 }}/10 estrellas</p>
         <div class="botones">
             <b-button variant="outline-secondary" class="btnVolver" href="#/"> Volver</b-button>
-            <b-button variant="primary" class="btnCrearPost" v-on:click="handleSubmit" href="#/">Publicar</b-button>
+            <b-button variant="primary" class="btnCrearPost" v-on:click="handleSubmit" href="#/">Guardar</b-button>
         </div>
-
-
-
     </div>
 </div>
     
 </template>
 
 <script>
+
 import axios from "axios"
 
 import Header from './Header.vue';
@@ -72,10 +70,25 @@ export default {
                 "title": this.title,
                 "username": localStorage.username
             })
+        },
+        handleInfo() {
+            const url = "http://127.0.0.1:5000/getpost/" + this.$route.params.id
+            axios.get(url).then((result) => {
+            this.value10 = result.data.rating
+            this.review = result.data.review
+            this.title = result.data.title
+            this.selected = result.data.category
+        })
         }
     },
 
-  name: 'NuevoPost',
+     mounted(){
+
+            this.handleInfo()
+            
+        },
+
+  name: 'EditarPost',
   props: {
   }, 
   components:{
@@ -130,5 +143,4 @@ export default {
     margin-top:40%;
     margin-left: 35%;;
 }
-
 </style>

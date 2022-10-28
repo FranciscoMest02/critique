@@ -1,28 +1,36 @@
 <template>
     <div id="sidebar" class="sticky">
         <div class="search-container">
-            <form action="/action_page.php">
-                <input type="text" placeholder="Busca" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+            <form @submit.prevent>
+                <input v-model="buscador" type="text" placeholder="Buscar" name="search">
+                <button v-on:click="handleFilter"><i class="fa fa-search"></i></button>
             </form>
         </div>
 
         <h4>Menu</h4>
         <!-- faltan los icons lol -->
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category1 }} </a>
+            <i class="fa fa-search"></i> <a href="#/" class="web-bar-item"> {{ Category1 }} </a>
         </div>
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category2 }} </a>
+            <i class="fa fa-search"></i> <a href="#/filtro/Película" class="web-bar-item"> {{ Category2 }} </a>
         </div>
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category3 }} </a>
+            <i class="fa fa-search"></i> <a href="#/filtro/Música" class="web-bar-item"> {{ Category3 }} </a>
         </div>
 
         <div class="link-container">
-            <i class="fa fa-search"></i> <a href="#" class="web-bar-item"> {{ Category4 }} </a>
+            <i class="fa fa-search"></i> <a href="#/filtro/Libro" class="web-bar-item"> {{ Category4 }} </a>
+        </div>
+
+        <div class="link-container">
+            <i class="fa fa-search"></i> <a href="#/filtro/Serie" class="web-bar-item"> {{ Category5 }} </a>
         </div>
         
+        <div class="link-container">
+            <i class="fa fa-search"></i> <a :href="urlMisResenias" class="web-bar-item"> {{ Category6 }} </a>
+        </div>
+
     </div>
 </template>
 
@@ -34,14 +42,26 @@ export default {
             Category1: 'Reseñas',
             Category2: 'Peliculas',
             Category3: 'Canciones',
-            Category4: 'Libros'
+            Category4: 'Libros',
+            Category5: 'Series',
+            Category6: 'Mis reseñas',
+            urlMisResenias: "#/filtro/" + localStorage.username,
+            buscador: null
+        }
+    },
+    methods: {
+        handleFilter() {
+            const url = "#/filtro/titulo/" + this.buscador;
+            if(this.buscador != null){
+                window.location.href = url
+            }
         }
     }
 }
 
 </script>
 
-<style scooped>
+<style scoped>
 #sidebar {
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -52,8 +72,7 @@ export default {
     max-width: 525px;
     padding: 16px 0px 16px 0px;
     height: 100%;
-    position:fixed!important;
-
+    border-right: 2px solid #b3b3b3;
 }
 
 h4 {
@@ -94,6 +113,7 @@ div a:hover{
   background-color: white;
 }
 
+
 .link-container{
     background: linear-gradient(90deg, #afd4ff, white) no-repeat right bottom / 0 var(--bg-h);
     transition: background-size 500ms;
@@ -109,7 +129,7 @@ div a:hover{
     display: block;
     margin: 16px 50px 16px 50px;
     text-align: left;
-
+    width: 80%;
 }
 
 

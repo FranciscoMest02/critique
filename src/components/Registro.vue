@@ -11,28 +11,29 @@
                         <div class="nombre">
                             <b-form @submit.stop.prevent>
                                 <label for="text-nombre">Nombre</label>
-                                <b-form-input type="text" id="text-nombre"></b-form-input>
+                                <b-form-input v-model="nombre" type="text" id="text-nombre"></b-form-input>
                             </b-form>
                         </div>
                         <div class="email">
                             <b-form @submit.stop.prevent>
                                 <label for="text-email">Email</label>
-                                <b-form-input type="email" id="text-email"></b-form-input>
+                                <b-form-input v-model="mail" type="email" id="text-email"></b-form-input>
                             </b-form>
                         </div>
                         <div class="user">
                             <b-form @submit.stop.prevent>
                                 <label for="text-user">Usuario</label>
-                                <b-form-input type="text" id="text-user"></b-form-input>
+                                <b-form-input v-model="username" type="text" id="text-user"></b-form-input>
                             </b-form>
                         </div>
                         <div class="password">
                             <b-form @submit.stop.prevent>
                                 <label for="text-password">Contraseña</label>
-                                <b-form-input type="password" id="text-password" aria-describedby="password-help-block"></b-form-input>
+                                <b-form-input v-model="password" type="password" id="text-password" aria-describedby="password-help-block"></b-form-input>
                             </b-form>
                         </div>
-                        <b-button class="logIn" variant="primary">Regístrate</b-button><br><br>
+                        <b-button class="logIn" variant="primary" v-on:click="handleSubmit">Regístrate</b-button><br><br>
+                        <p v-if="confirmMsg" id="confirmMsg"> {{ confirmMsg }} </p>
                         <b-button class="logIn" variant="outline-dark">Regístrate con Google</b-button>
                         <b-button class="logIn" variant="outline-dark">Regístrate con Apple</b-button>
                     </div>
@@ -47,15 +48,35 @@
 </template>
 
 <script>
+import axios from "axios"
+
 import Header from './Header.vue'
 
 export default {
-  name: 'Login',
+  name: 'Registro',
   components: {
     Header
   },
-  props: {
-    msg: String
+  data() {
+    return {
+        nombre: '',
+        username: '',
+        mail: '',
+        password: '',
+        confirmMsg: null
+    }
+  },
+  methods: {
+    handleSubmit() {
+            axios.post("http://127.0.0.1:5000/user/new", {
+                "nombre": this.nombre,
+                "username": this.username,
+                "mail": this.mail,
+                "password": this.password,
+            }).then(() => {
+                this.confirmMsg = "Usuario creado correctamente, ve a la pagina de inicio de sesion para entrar"
+            })
+        }
   }
 }
 </script>
@@ -102,5 +123,10 @@ img {
     top: 93%;
     right: 5%;
     color: #FFFFFF;
+}
+
+#confirmMsg{
+    font-size: small;
+    color: #4fb533;
 }
 </style>
