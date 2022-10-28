@@ -127,6 +127,6 @@ img {
 
 #confirmMsg{
     font-size: small;
-    color: #6ef947;
+    color: #4fb533;
 }
 </style>

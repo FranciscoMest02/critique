@@ -15,7 +15,8 @@
                                 :title=post.title 
                                 :review=post.review 
                                 :category=post.category 
-                                :rating=post.rating 
+                                :rating=post.rating
+                                :id=post._id
                             />
                         </div>
                     </div>
