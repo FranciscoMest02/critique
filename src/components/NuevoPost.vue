@@ -2,11 +2,11 @@
 
 <div class="NuevoPost">
 
-    <Header/>
-
+    <NavBar/>
     <br>
 
     <div class="cuadroPost">
+
 
         <p class="tituloCrear"> Crear nueva publicación </p>
 
@@ -26,7 +26,7 @@
         <label>Tu calificación:  </label>
         <b-form-rating size="lg" id="rating-10" variant="warning" v-model="value10" stars="10" show-clear ></b-form-rating>
         <p class="ratingUsuario">{{ value10 }}/10 estrellas</p>
-        <b-button variant="primary" class="btnCrearPost" v-on:click="handleSubmit">Publicar</b-button>
+        <b-button variant="primary" class="btnCrearPost" v-on:click="handleSubmit" href="#/">Publicar</b-button>
 
 
 
@@ -39,6 +39,9 @@
 import axios from "axios"
 
 import Header from './Header.vue';
+import NavBar from './NavBar.vue';
+
+
 
 export default {
 
@@ -73,7 +76,7 @@ export default {
   props: {
   }, 
   components:{
-    Header
+    Header, NavBar
 }
 }
 </script>
