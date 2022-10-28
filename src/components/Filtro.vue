@@ -41,9 +41,8 @@ export default {
         posts: null
     }),
     created(){
-        const msg = "http://127.0.0.1:5000/post/" + this.$route.params.categoria
-        console.log(msg)
-        axios.get(msg).then((result) => {
+        const url = "http://127.0.0.1:5000/post/" + this.$route.params.categoria
+        axios.get(url).then((result) => {
             this.posts = result.data
         }
         )

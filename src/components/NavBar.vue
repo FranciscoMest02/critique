@@ -4,8 +4,8 @@
    <div class="classHeader">
     <img class="logo" src="../assets/logoCritique.png"/>
     <p class="pHeader" > CRITIQUE </p>   
-     <b-button class="preguntas" variant="primary" href=#/crearpost>Nueva reseña</b-button>
-     <b-button class="profile" variant="danger" href=#/login>Cerrar sesion</b-button>
+     <b-button class="preguntas" variant="primary" href="#/crearpost">Nueva reseña</b-button>
+     <b-button class="profile" variant="danger" href="#/login" v-on:click="handleLogOut">Cerrar sesion</b-button>
     </div>
     </div>
 </template>
@@ -14,8 +14,12 @@
 
 export default {
   name: 'NavBar',
-  props: {
-  }, 
+  methods: {
+    handleLogOut() {
+        localStorage.removeItem('username')
+        localStorage.removeItem('userId')
+    }
+  }
 }
 </script>
 
