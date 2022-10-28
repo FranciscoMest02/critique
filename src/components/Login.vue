@@ -11,17 +11,17 @@
                         <div class="user">
                             <b-form @submit.stop.prevent>
                                 <label for="text-user">Usuario</label>
-                                <b-form-input type="text" id="text-user"></b-form-input>
+                                <b-form-input type="text" id="text-user" v-model="username"></b-form-input>
                             </b-form>
                         </div>
                         <div class="password">
                             <b-form @submit.stop.prevent>
                                 <label for="text-password">Contraseña</label>
-                                <b-form-input type="password" id="text-password" aria-describedby="password-help-block"></b-form-input>
+                                <b-form-input type="password" id="text-password" aria-describedby="password-help-block" v-model="password"></b-form-input>
                             </b-form>
                         </div>
-
-                        <b-button class="logIn" variant="primary" href="#/">Iniciar sesión</b-button>
+                        <p v-if="errorMsg" id="errorMsg"> {{ errorMsg }}</p>
+                        <b-button class="logIn" variant="primary" v-on:click="handleLogIn">Iniciar sesión</b-button>
 
                     </div>
                 </b-col>
@@ -36,6 +36,8 @@
 
 
 <script>
+import axios from "axios"
+
 import Header from './Header.vue'
 
 export default {
@@ -43,8 +45,33 @@ export default {
   components: {
     Header
   },
-  props: {
-    msg: String
+  data() {
+    return {
+        username: '',
+        password: '',
+        loginResult: false,
+        userId: '',
+        errorMsg: null
+    }
+  },
+  methods: {
+    handleLogIn() {
+        const url = "http://127.0.0.1:5000/userLogIn/" + this.username + "/" + this.password;
+        axios.get(url).then((result) => {
+            this.loginResult = result.data.result
+            this.userId = result.data.userId
+            console.log(this.loginResult)
+            console.log(result.data)
+        }).then(() => {
+            if(this.loginResult){
+                localStorage.username = this.username
+                localStorage.userId = this.userId
+                window.location.href = "#/"
+            } else {
+                this.errorMsg = "Usuario o contraseña no reconocido"
+            }
+        })
+    }
   }
 }
 </script>
@@ -86,5 +113,10 @@ img {
     top: 93%;
     right: 5%;
     color: #FFFFFF;
+}
+
+#errorMsg{
+    font-size: small;
+    color: #f02a2a;
 }
 </style>

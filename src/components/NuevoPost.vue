@@ -67,7 +67,7 @@ export default {
                 "rating": this.value10,
                 "review": this.review,
                 "title": this.title,
-                "username": "PanchitoM"
+                "username": localStorage.username
             })
         }
     },
