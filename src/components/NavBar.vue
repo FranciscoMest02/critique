@@ -3,9 +3,9 @@
    <div class="hi">
    <div class="classHeader">
     <img class="logo" src="../assets/logoCritique.png"/>
-    <p class="pHeader"> CRITIQUE </p>   
-     <b-button class="preguntas" variant="primary">Nueva reseña</b-button>
-     <b-button class="profile" variant="danger">Cerrar sesion</b-button>
+    <p class="pHeader" > CRITIQUE </p>   
+     <b-button class="preguntas" variant="primary" href=#/crearpost>Nueva reseña</b-button>
+     <b-button class="profile" variant="danger" href=#/login>Cerrar sesion</b-button>
     </div>
     </div>
 </template>

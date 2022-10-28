@@ -21,7 +21,7 @@
                             </b-form>
                         </div>
 
-                        <b-button class="logIn" variant="primary">Iniciar sesión</b-button>
+                        <b-button class="logIn" variant="primary" href="#/">Iniciar sesión</b-button>
 
                     </div>
                 </b-col>
