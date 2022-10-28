@@ -16,11 +16,20 @@
             </b-container>
             <p class="title">{{title}}</p>
             <p class="review">{{review}}</p>
+            <b-container v-if="myReview">
+                <b-row>
+                    <b-col cols="8"></b-col>
+                    <b-col cols="2"><b-button variant="danger" v-on:click="handleDelete">Borrar</b-button></b-col>
+                    <b-col cols="2"><b-button v-on:click="handleEdit">Editar</b-button></b-col>
+                </b-row>
+            </b-container>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
   name: 'Post',
   props: {
@@ -29,8 +38,33 @@ export default {
     category: String,
     title: String,
     review: String,
-    rating: Number
-  }, 
+    rating: Number,
+    myReview: {
+        type: Boolean,
+        default: false
+    },
+    id: {
+        type: String,
+        default: ''
+    }
+  },
+  methods: {
+    handleDelete() {
+        if(this.id != ''){
+            const url = "http://127.0.0.1:5000/post/delete/" + this.id;
+            axios.delete(url).then(() => {
+                console.log("Borrado")
+                this.$router.go()
+            })
+        }
+    },
+    handleEdit() {
+        if(this.id != ''){
+            const url = "#/editarpost/" + this.id
+            window.location.href = url
+        }
+    }
+  }
 }
 </script>
 

@@ -16,6 +16,8 @@
                                 :review=post.review 
                                 :category=post.category 
                                 :rating=post.rating 
+                                v-bind:myReview="selfReview"
+                                :id=post._id
                             />
                         </div>
                     </div>
@@ -38,12 +40,14 @@ export default {
         Post, Sidebar, NavBar
     },
     data: () => ({
-        posts: null
+        posts: null,
+        selfReview: false
     }),
     created(){
         var url
         if(this.$route.params.categoria == localStorage.username){
             url = "http://127.0.0.1:5000/post/user/" + this.$route.params.categoria
+            this.selfReview = true
         } else {
             url = "http://127.0.0.1:5000/post/" + this.$route.params.categoria
         }
