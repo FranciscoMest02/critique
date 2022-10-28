@@ -60,9 +60,8 @@ export default {
         axios.get(url).then((result) => {
             this.loginResult = result.data.result
             this.userId = result.data.userId
-            console.log(this.loginResult)
-            console.log(result.data)
         }).then(() => {
+            console.log(this.result.data)
             if(this.loginResult){
                 localStorage.username = this.username
                 localStorage.userId = this.userId
