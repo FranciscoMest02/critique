@@ -15,19 +15,19 @@
         <b-form-select class = "categoriaForm" v-model="selected" :options="options"></b-form-select>
          <br>
          <br>
-            <!-- <div class="mt-3">Selected: <strong>{{ selected }}</strong></div> -->
+             <div class="mt-3">Selected: <strong>{{ selected }}</strong></div> 
         
         <label for="text-user">Título: </label>
-        <b-form-input type="text" id="text-user"></b-form-input>
+        <b-form-input v-model="title" type="text" id="text-user"></b-form-input>
         <br>
 
         <label for="text">Reseña: </label> 
-        <b-form-textarea id="textarea" v-model="text" placeholder="Escribe la reseña" rows="3" max-rows="6" ></b-form-textarea>
+        <b-form-textarea id="textarea" v-model="review" placeholder="Escribe la reseña" rows="3" max-rows="6" ></b-form-textarea>
         <br>
         <label>Tu calificación:  </label>
         <b-form-rating size="lg" id="rating-10" variant="warning" v-model="value10" stars="10" show-clear ></b-form-rating>
         <p class="ratingUsuario">{{ value10 }}/10 estrellas</p>
-        <b-button variant="primary" class="btnCrearPost">Publicar</b-button>
+        <b-button variant="primary" class="btnCrearPost" v-on:click="handleSubmit">Publicar</b-button>
 
 
 
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import axios from "axios"
 
 import Header from './Header.vue';
 
@@ -44,7 +45,7 @@ export default {
 
     data() {
       return {
-        selected: null,
+        selected: '',
         options: [
           { value: null, text: '' },
           { value: 'Música', text: 'Música' },
@@ -53,7 +54,20 @@ export default {
           { value: 'Libro', text: 'Libro' },
         ],
         value10: null,
+        review: '',
+        title: '',
       }
+    },
+    methods: {
+        handleSubmit() {
+            axios.post("http://127.0.0.1:5000/post/new", {
+                "category": this.selected,
+                "rating": this.value10,
+                "review": this.review,
+                "title": this.title,
+                "username": "PanchitoM"
+            })
+        }
     },
 
   name: 'NuevoPost',
