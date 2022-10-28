@@ -58,16 +58,17 @@ export default {
     handleLogIn() {
         const url = "http://127.0.0.1:5000/userLogIn/" + this.username + "/" + this.password;
         axios.get(url).then((result) => {
+            //Obtenemos la informacion de la api
             this.loginResult = result.data.result
             this.userId = result.data.userId
-        }).then(() => {
-            console.log(this.result.data)
+
+            //Si fue un login aceptado, guardamos la informacion del usuario
             if(this.loginResult){
                 localStorage.username = this.username
                 localStorage.userId = this.userId
                 window.location.href = "#/"
             } else {
-                this.errorMsg = "Usuario o contraseña no reconocido"
+                this.errorMsg = "Usuario o contraseña incorrectos"
             }
         })
     }
