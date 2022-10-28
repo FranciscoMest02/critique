@@ -63,12 +63,12 @@ export default {
     },
     methods: {
         handleSubmit() {
-            axios.post("http://127.0.0.1:5000/post/new", {
+            const url = "http://127.0.0.1:5000/editarpost/" + this.$route.params.id
+            axios.put(url, {
                 "category": this.selected,
                 "rating": this.value10,
                 "review": this.review,
                 "title": this.title,
-                "username": localStorage.username
             })
         },
         handleInfo() {
